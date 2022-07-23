@@ -13,7 +13,7 @@ import { ProductModule } from './product/product.module';
       username: 'root',
       password: 'password',
       database: 'nest_dev',
-      entities: ['**/*.entity.ts'],
+      entities: ['**/*.entity.js'],
       synchronize: true,
     }),
     ProductModule,
