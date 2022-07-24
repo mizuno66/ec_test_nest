@@ -6,6 +6,7 @@ services:
       - /var/lib/mysql
   db:
     image: mysql:5.7
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes_from:
       - db_data
     ports:
