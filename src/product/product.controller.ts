@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { Product } from './product.entity';
 import { ProductService } from './product.service';
 
@@ -7,7 +7,12 @@ export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
   @Get()
-  findAll(): Promise<Product[]> {
+  async findAll(): Promise<Product[]> {
     return this.productService.findAll();
+  }
+
+  @Post()
+  async create(@Body() product: Product) {
+    return this.productService.create(product);
   }
 }

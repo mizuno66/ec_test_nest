@@ -13,4 +13,8 @@ export class ProductService {
   async findAll(): Promise<Product[]> {
     return await this.productRepostiory.find();
   }
+
+  async create(product: Product) {
+    return await this.productRepostiory.insert(product);
+  }
 }
